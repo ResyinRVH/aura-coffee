@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${texGyreAdventor.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${texGyreAdventor.variable} scroll-smooth h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f6eee3] text-stone-900">
         {children}

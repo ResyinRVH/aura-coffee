@@ -32,16 +32,16 @@ const COMPLEMENTS: ComplementItem[] = [
 
 export default function Hero() {
     return (
-        <section className="relative w-full overflow-hidden bg-[#f6eee3] py-8 lg:py-16">
+        <section id="home" className="relative w-full overflow-hidden bg-[#f6eee3] py-8 lg:py-16">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
                 <div className="lg:col-span-4 flex flex-col justify-center space-y-6 z-10">
                     <h1 className="font-adventor font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] text-stone-900 tracking-tight">
-                        Midnight <br />
-                        Frappuccino
+                        Signature <br />
+                        Espresso Shot
                     </h1>
 
                     <p className="text-stone-600 text-sm sm:text-base leading-relaxed max-w-sm">
-                        The Midnight Mint Mocha Frappuccino features extra dark cocoa blended with Frappuccino Roast coffee.
+                        Our house roasted single origin pulled to perfection, featuring deep cacao sweetness, delicate fruit acidity, and an exceptionally rich crema
                     </p>
 
                     <div className="pt-2">
@@ -53,7 +53,7 @@ export default function Hero() {
                     <div>
                         <button
                             type="button"
-                            className="group inline-flex items-center gap-4 bg-stone-900 text-white pl-6 pr-2.5 py-2.5 rounded-full shadow-lg hover:bg-stone-800 transition-all duration-200 transform hover:-translate-y-0.5"
+                            className="group inline-flex items-center gap-4 bg-navy text-white pl-6 pr-2.5 py-2.5 rounded-full shadow-lg hover:bg-navy-light  transition-all duration-200 transform hover:-translate-y-0.5"
                         >
                             <span className="font-medium text-sm">Buy Now</span>
                             <span className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white transition-transform duration-200 group-hover:translate-x-0.5">
@@ -65,7 +65,7 @@ export default function Hero() {
 
                 <div className="lg:col-span-5 relative flex items-center justify-center py-6">
 
-                    <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full bg-[#f67b52] flex items-center justify-center shadow-inner">
+                    <div className="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full bg-navy flex items-center justify-center shadow-inner">
                         <div className="absolute inset-5 rounded-full border border-white/20 pointer-events-none" />
 
                         <div className="relative w-[500px] h-[500px] sm:w-[1000px] sm:h-[1000px] z-10 drop-shadow-[0_25px_35px_rgba(0,0,0,0.30)] flex items-center justify-center">

@@ -8,6 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-navy:#002133;
+  --color-navy-light:#034C73;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-adventor: var(--font-adventor), sans-serif;
