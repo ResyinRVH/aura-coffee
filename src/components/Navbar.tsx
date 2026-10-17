@@ -4,155 +4,163 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Search, ShoppingBag, Menu, X } from 'lucide-react';
 import { useSearch } from '@/context/SearchContext';
+import { useCart } from '@/context/CartContext';
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Menu', href: '#menu' },
-  { label: 'Find Us', href: '#location' },
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Menu', href: '#menu' },
+    { label: 'Find Us', href: '#location' },
 ];
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { searchQuery, setSearchQuery } = useSearch();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { searchQuery, setSearchQuery } = useSearch();
+    const { totalItems, setIsCartOpen } = useCart();
 
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
+    const handleScroll = (
+        e: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+    ) => {
+        e.preventDefault();
+        const targetId = href.replace('#', '');
+        const element = document.getElementById(targetId);
 
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      window.history.pushState(null, '', href);
-    }
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, '', href);
+        }
 
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
-  };
+        if (mobileMenuOpen) {
+            setMobileMenuOpen(false);
+        }
+    };
 
-  const handleSearchInput = (value: string) => {
-    setSearchQuery(value);
+    const handleSearchInput = (value: string) => {
+        setSearchQuery(value);
 
-    if (value.trim().length > 0) {
-      const menuSection = document.getElementById('menu');
-      if (menuSection) {
-        menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  };
+        if (value.trim().length > 0) {
+            const menuSection = document.getElementById('menu');
+            if (menuSection) {
+                menuSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    };
 
-  return (
-    <header className="sticky top-0 z-50 w-full bg-[#f6eee3]/70 backdrop-blur-md border-b border-stone-200/50 text-stone-900 transition-all duration-200">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-        <Link
-          href="/"
-          onClick={(e) => handleScroll(e, '#home')}
-          className="flex items-center gap-2.5 shrink-0"
-        >
-          <span className="font-extrabold tracking-tight text-lg text-stone-900 uppercase">
-            AURORA
-          </span>
-        </Link>
+    return (
+        <header className="sticky top-0 z-50 w-full bg-[#f6eee3]/70 backdrop-blur-md border-b border-stone-200/50 text-stone-900 transition-all duration-200">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+                <Link
+                    href="/"
+                    onClick={(e) => handleScroll(e, '#home')}
+                    className="flex items-center gap-2.5 shrink-0"
+                >
+                    <span className="font-extrabold tracking-tight text-lg text-stone-900 uppercase">
+                        AURORA
+                    </span>
+                </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 text-[14px] font-adventor font-bold text-stone-700">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleScroll(e, link.href)}
-              className="hover:text-stone-950 transition-colors duration-150"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+                <nav className="hidden lg:flex items-center gap-8 text-[14px] font-adventor font-bold text-stone-700">
+                    {NAV_LINKS.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            onClick={(e) => handleScroll(e, link.href)}
+                            className="hover:text-stone-950 transition-colors duration-150"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
 
-        <div className="flex items-center gap-5">
-          <div className="relative hidden sm:block">
-            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
-              <Search className="w-4 h-4" />
-            </span>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => handleSearchInput(e.target.value)}
-              placeholder="Search coffee"
-              className="w-44 md:w-56 bg-white text-stone-800 placeholder-stone-400 text-sm rounded-full pl-10 pr-8 py-2 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-stone-200/50 focus:outline-none focus:ring-2 focus:ring-navy transition-all duration-200"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery('')}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-700"
-                aria-label="Clear search"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
+                <div className="flex items-center gap-5">
+                    <div className="relative hidden sm:block">
+                        <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+                            <Search className="w-4 h-4" />
+                        </span>
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => handleSearchInput(e.target.value)}
+                            placeholder="Search coffee"
+                            className="w-44 md:w-56 bg-white text-stone-800 placeholder-stone-400 text-sm rounded-full pl-10 pr-8 py-2 shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-stone-200/50 focus:outline-none focus:ring-2 focus:ring-navy transition-all duration-200"
+                        />
+                        {searchQuery && (
+                            <button
+                                type="button"
+                                onClick={() => setSearchQuery('')}
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-700"
+                                aria-label="Clear search"
+                            >
+                                <X className="w-3.5 h-3.5" />
+                            </button>
+                        )}
+                    </div>
+
+                    <button
+                        type="button"
+                        onClick={() => setIsCartOpen(true)}
+                        aria-label="Shopping Bag"
+                        className="relative p-2 text-stone-800 hover:text-stone-950 transition-colors"
+                    >
+                        <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
+                        {totalItems > 0 && (
+                            <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-orange-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 ring-2 ring-[#f6eee3] animate-in zoom-in-50 duration-150">
+                                {totalItems}
+                            </span>
+                        )}
+                    </button>
+
+                    <button
+                        type="button"
+                        className="lg:hidden p-2 text-stone-700 hover:text-stone-950"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label="Toggle Menu"
+                    >
+                        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                </div>
+            </div>
+
+            {mobileMenuOpen && (
+                <div className="lg:hidden px-6 pt-2 pb-6 border-t border-stone-200/60 bg-[#f6eee3] flex flex-col gap-4">
+                    <div className="relative mt-2 sm:hidden">
+                        <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+                            <Search className="w-4 h-4" />
+                        </span>
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => handleSearchInput(e.target.value)}
+                            placeholder="Search coffee..."
+                            className="w-full bg-white text-sm rounded-full pl-10 pr-8 py-2 border border-stone-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f67b52]/40"
+                        />
+                        {searchQuery && (
+                            <button
+                                type="button"
+                                onClick={() => setSearchQuery('')}
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-700"
+                                aria-label="Clear mobile search"
+                            >
+                                <X className="w-3.5 h-3.5" />
+                            </button>
+                        )}
+                    </div>
+
+                    <div className="flex flex-col gap-3 pt-2 text-sm font-medium text-stone-700">
+                        {NAV_LINKS.map((link) => (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                onClick={(e) => handleScroll(e, link.href)}
+                                className="py-1 hover:text-stone-950"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             )}
-          </div>
-
-          <button
-            aria-label="Shopping Bag"
-            className="relative p-2 text-stone-800 hover:text-stone-950 transition-colors"
-          >
-            <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-orange-500 rounded-full ring-2 ring-[#f6eee3]" />
-          </button>
-
-          <button
-            type="button"
-            className="lg:hidden p-2 text-stone-700 hover:text-stone-950"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-
-      {mobileMenuOpen && (
-        <div className="lg:hidden px-6 pt-2 pb-6 border-t border-stone-200/60 bg-[#f6eee3] flex flex-col gap-4">
-          <div className="relative mt-2 sm:hidden">
-            <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
-              <Search className="w-4 h-4" />
-            </span>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => handleSearchInput(e.target.value)}
-              placeholder="Search coffee..."
-              className="w-full bg-white text-sm rounded-full pl-10 pr-8 py-2 border border-stone-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f67b52]/40"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery('')}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-700"
-                aria-label="Clear mobile search"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-3 pt-2 text-sm font-medium text-stone-700">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleScroll(e, link.href)}
-                className="py-1 hover:text-stone-950"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-    </header>
-  );
+        </header>
+    );
 }
