@@ -1,6 +1,7 @@
 export interface MenuItem {
   id: string;
   name: string;
+  image: string;
   category: 'espresso' | 'manual-brew' | 'signature' | 'pastry';
   description: string;
   tastingNotes?: string[];
@@ -20,6 +21,7 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: '1',
     name: 'Nordic Light Roast Filter',
+    image: '/nordic-light.webp',
     category: 'manual-brew',
     description: 'Ethiopia Yirgacheffe washed process via V60 dripper.',
     tastingNotes: ['Jasmine', 'Peach Blossom', 'Bergamot'],
@@ -29,6 +31,7 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: '2',
     name: 'Smoked Vanilla Oat Latte',
+    image:'/Smoked-Vanilla-Web.webp',
     category: 'signature',
     description: 'Double ristretto infused with house-made Madagascar vanilla bean.',
     tastingNotes: ['Velvety Vanilla', 'Brown Butter', 'Toasted Oat'],
