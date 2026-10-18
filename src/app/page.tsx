@@ -8,6 +8,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Menu from '@/components/Menu';
 import FindUs from '@/components/FindUs';
+import Footer from '@/components/Footer';
 import CartPopUp from '@/components/CartPopUp';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
           <About />
           <Menu />
           <FindUs />
+          <Footer/>
           <CartPopUp />
         </div>
       </CartProvider>
