@@ -8,12 +8,12 @@ interface HeroContentProps {
 export default function HeroContent({ onOrderClick }: HeroContentProps) {
   return (
     <div className="lg:col-span-4 flex flex-col justify-center space-y-6 z-10">
-      <h1 className="font-adventor font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] text-stone-900 tracking-tight">
+      <h1 className="font-adventor font-bold text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] text-silver tracking-tight">
         Signature <br />
         Espresso Shot
       </h1>
 
-      <p className="text-stone-600 text-sm sm:text-base leading-relaxed max-w-sm">
+      <p className="text-silver text-sm sm:text-base leading-relaxed max-w-sm">
         Our house roasted single origin pulled to perfection, featuring deep
         cacao sweetness, delicate fruit acidity, and an exceptionally rich
         crema.
