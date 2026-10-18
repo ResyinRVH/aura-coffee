@@ -10,42 +10,11 @@ import {
 export default function Footer() {
   return (
     <footer className="w-full bg-coffee text-silver rounded-t-[32px] sm:rounded-t-[48px] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 pt-16 pb-12 ">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10">
-          <div className="space-y-4">
-            <h4 className="text-silver font-semibold text-base tracking-wide">Privacy</h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-silver">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Terms of use
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Privacy policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Cookies
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           <div className="space-y-4">
             <h4 className="text-silver font-semibold text-base tracking-wide">Services</h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-silver">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Shop
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Order ahead
-                </Link>
-              </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors duration-200">
                   Menu
@@ -58,39 +27,13 @@ export default function Footer() {
             <h4 className="text-silver font-semibold text-base tracking-wide">About us</h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-silver">
               <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
+                <Link href="#location" className="hover:text-white transition-colors duration-200">
                   Find a location
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
+                <Link href="#about" className="hover:text-white transition-colors duration-200">
                   About us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Our story
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-silver font-semibold text-base tracking-wide">Information</h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-silver">
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Plans & pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Jobs
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
-                  Sell your product
                 </Link>
               </li>
             </ul>
