@@ -21,7 +21,8 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 const parsePrice = (priceStr: string): number => {
-    return parseInt(priceStr.replace(/[^0-9]/g, ''), 10) || 0;
+    const sanitized = priceStr.replace(/[^0-9.]/g, '');
+    return parseFloat(sanitized) || 0;
 };
 
 export function CartProvider({ children }: { children: ReactNode }) {

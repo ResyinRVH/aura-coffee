@@ -6,7 +6,7 @@ import { X, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 export default function CartPopUp() {
   const { cart, isCartOpen, setIsCartOpen, updateQuantity, totalPrice, totalItems } = useCart();
   if (!isCartOpen) return null;
-  const formattedTotalPrice = `$ ${totalPrice.toLocaleString('id-ID')}`;
+  const formattedTotalPrice = `$ ${totalPrice.toFixed(2)}`;
   const handleCheckoutWA = () => {
     const phoneNumber = '6285607563796'; 
     const itemsList = cart
