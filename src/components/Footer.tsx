@@ -64,7 +64,7 @@ export default function Footer() {
       </div>
 
       <div className="w-full bg-navy py-4 border-t border-white/5 text-white flex justify-center">
-          <p>Copyright &copy;  2026 Aurora</p>
+          <p>Copyright &copy;  2026 Aura</p>
       </div>
     </footer>
   )

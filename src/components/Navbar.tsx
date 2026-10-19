@@ -56,7 +56,7 @@ export default function Navbar() {
                     className="flex items-center gap-2.5 shrink-0"
                 >
                     <span className="font-extrabold tracking-tight text-lg text-stone-900 uppercase">
-                        AURORA
+                        AURA
                     </span>
                 </Link>
 

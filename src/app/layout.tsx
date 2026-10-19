@@ -53,7 +53,7 @@ const texGyreAdventor = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Aurora Roast & Brew | Artisan & Boutique Coffee Roastery",
+  title: "Aura Roast & Brew | Artisan & Boutique Coffee Roastery",
   description:
     "A clean, modern artisan coffee house landing page highlighting specialty coffee, curated menu, and sanctuary experience.",
 };

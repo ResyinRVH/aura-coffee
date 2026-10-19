@@ -10,19 +10,19 @@ interface ComplementItem {
 
 const COMPLEMENTS: ComplementItem[] = [
   {
-    id: 'sippy',
+    id: 'coffee',
     title: 'Medium Roast',
     desc: 'Slow roasted to preserve natural floral & cacao notes',
     icon: <Coffee className="w-10 h-10 text-coffee stroke-[1.8]" />,
   },
   {
-    id: 'donut',
+    id: 'calendar',
     title: 'Freshly Roasted',
-    desc: 'Pulled within 14 days of resting post-roast',
+    desc: 'Pulled within 14 days of resting post roast',
     icon: <CalendarDays className="w-10 h-10 text-navy stroke-[1.8]" />,
   },
   {
-    id: 'cookies',
+    id: 'glass',
     title: 'Sparkling Cleanser',
     desc: 'Served with cold sparkling water to refresh your palate',
     icon: <Wine className="w-10 h-10 text-coffee stroke-[1.8]" />,
