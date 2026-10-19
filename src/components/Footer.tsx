@@ -10,13 +10,13 @@ import {
 export default function Footer() {
   return (
     <footer className="w-full bg-coffee text-silver rounded-t-[32px] sm:rounded-t-[48px] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 pt-16 pb-12 ">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 pt-5 pb-5 ">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10">
           <div className="space-y-4">
             <h4 className="text-silver font-semibold text-base tracking-wide">Services</h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-silver">
               <li>
-                <Link href="#" className="hover:text-white transition-colors duration-200">
+                <Link href="#menu" className="hover:text-white transition-colors duration-200">
                   Menu
                 </Link>
               </li>
@@ -64,7 +64,7 @@ export default function Footer() {
       </div>
 
       <div className="w-full bg-navy py-4 border-t border-white/5 text-white flex justify-center">
-          <p>Copyright &copy;  2026 Aura</p>
+          <p>Copyright &copy;  2026 Aurora</p>
       </div>
     </footer>
   )
