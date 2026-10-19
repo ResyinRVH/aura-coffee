@@ -12,9 +12,11 @@
   --color-navy-light:#034C73;
   --color-coffee:#D48B3F;
   --color-silver:#242424;
+  --color-silver-100:#F1E7DF;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-adventor: var(--font-adventor), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

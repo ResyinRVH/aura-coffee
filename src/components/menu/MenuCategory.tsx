@@ -18,10 +18,10 @@ export default function MenuCategories({
             key={cat.id}
             type="button"
             onClick={() => onSelectCategory(cat.id)}
-            className={`px-5 py-2.5 rounded-full text-xs font-medium transition-all duration-200 ${
+            className={`px-5 py-2.5 rounded-full text-xs font-poppins font-medium transition-all duration-200 ${
               isActive
-                ? 'bg-stone-900 text-white shadow-md'
-                : 'bg-white/80 text-stone-600 hover:bg-white hover:text-stone-900 shadow-sm border border-stone-200/40'
+                ? 'bg-navy text-white shadow-md'
+                : 'bg-white/80 text-silver hover:bg-white hover:text-silver shadow-sm border border-silver/10'
             }`}
           >
             {cat.label}

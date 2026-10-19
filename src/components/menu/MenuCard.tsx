@@ -20,7 +20,7 @@ export default function MenuItemCard({
 }: MenuItemCardProps) {
   return (
     <div className="group relative bg-white rounded-[32px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] border border-stone-200/60 transition-all duration-300 flex flex-col justify-between">
-      <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-2">
+      <div className="relative w-full h-48 sm:h-30 flex items-center justify-center my-2">
         <div className="absolute w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-[#f4ece4]/70 transition-transform duration-300 group-hover:scale-105" />
         <div className="relative w-32 h-32 sm:w-36 sm:h-36 z-[1] drop-shadow-[0_14px_16px_rgba(0,0,0,0.15)] transition-transform duration-300 group-hover:-translate-y-1">
           <Image
@@ -67,7 +67,7 @@ export default function MenuItemCard({
               type="button"
               onClick={() => onAddToCart(item)}
               aria-label={`Add ${item.name} to cart`}
-              className="w-11 h-14 rounded-[20px] bg-white border border-stone-200/80 shadow-[0_4px_14px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] hover:border-stone-300 active:scale-95 text-stone-800 hover:text-[#f67b52] flex items-center justify-center transition-all duration-200"
+              className="w-11 h-14 rounded-[20px] bg-white border border-stone-200/80 shadow-[0_4px_14px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] hover:border-stone-300 active:scale-95 text-stone-800 hover:text-coffee flex items-center justify-center transition-all duration-200"
             >
               <Plus className="w-5 h-5 stroke-[1.8]" />
             </button>

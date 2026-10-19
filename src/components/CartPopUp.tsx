@@ -1,20 +1,19 @@
 'use client';
 
-import React from 'react';
 import { useCart } from '@/context/CartContext';
 import { X, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 
 export default function CartPopUp() {
   const { cart, isCartOpen, setIsCartOpen, updateQuantity, totalPrice, totalItems } = useCart();
   if (!isCartOpen) return null;
-  const formattedTotalPrice = `IDR ${totalPrice.toLocaleString('id-ID')}`;
+  const formattedTotalPrice = `$ ${totalPrice.toLocaleString('id-ID')}`;
   const handleCheckoutWA = () => {
     const phoneNumber = '6285607563796'; 
     const itemsList = cart
       .map((ci) => `${ci.quantity}x ${ci.item.name}`)
       .join(', ');
 
-    const message = `Halo Aura Brew, saya ingin pesan: ${itemsList}. Total: ${formattedTotalPrice}`;
+    const message = `Halo Aurora Brew, saya ingin pesan: ${itemsList}. Total: ${formattedTotalPrice}`;
     const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank');
   };
@@ -31,7 +30,7 @@ export default function CartPopUp() {
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-5 h-5 text-stone-900" />
             <h2 className="font-adventor font-bold text-lg text-stone-900">
-              Keranjang Pesanan ({totalItems})
+              Your Order ({totalItems})
             </h2>
           </div>
           <button
@@ -46,9 +45,9 @@ export default function CartPopUp() {
         <div className="flex-1 overflow-y-auto py-4 space-y-4 pr-1">
           {cart.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center text-stone-500">
-              <ShoppingBag className="w-12 h-12 stroke-[1.2] mb-3 text-stone-400" />
-              <p className="font-medium text-sm">Keranjang belanja masih kosong</p>
-              <p className="text-xs text-stone-400 mt-1">
+              <ShoppingBag className="w-12 h-12 stroke-[1.2] mb-3 text-silver" />
+              <p className="font-medium text-silver/50 text-sm">Keranjang belanja masih kosong</p>
+              <p className="text-xs text-silver/50 mt-1">
                 Pilih racikan kopi favoritmu dari katalog menu.
               </p>
             </div>
@@ -59,10 +58,10 @@ export default function CartPopUp() {
                 className="bg-white/80 rounded-2xl p-4 border border-stone-200/60 flex items-center justify-between shadow-sm"
               >
                 <div className="flex-1 pr-3">
-                  <h4 className="font-adventor font-bold text-sm text-stone-900">
+                  <h4 className="font-adventor font-bold text-sm text-silver">
                     {item.name}
                   </h4>
-                  <p className="text-xs text-[#f67b52] font-semibold mt-0.5">
+                  <p className="text-xs text-coffee font-semibold mt-0.5">
                     {item.price}
                   </p>
                 </div>
@@ -94,7 +93,7 @@ export default function CartPopUp() {
         {cart.length > 0 && (
           <div className="pt-4 border-t border-stone-200 flex flex-col gap-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-stone-600">Total Ringkasan:</span>
+              <span className="text-sm font-medium text-stone-600">Subtotal:</span>
               <span className="font-adventor font-bold text-lg text-stone-900">
                 {formattedTotalPrice}
               </span>

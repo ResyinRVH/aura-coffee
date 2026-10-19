@@ -13,7 +13,7 @@ export default function HeroContent({ onOrderClick }: HeroContentProps) {
         Espresso Shot
       </h1>
 
-      <p className="text-silver text-sm sm:text-base leading-relaxed max-w-sm">
+      <p className="font-poppins text-silver text-sm sm:text-base leading-relaxed max-w-sm">
         Our house roasted single origin pulled to perfection, featuring deep
         cacao sweetness, delicate fruit acidity, and an exceptionally rich
         crema.
@@ -31,7 +31,7 @@ export default function HeroContent({ onOrderClick }: HeroContentProps) {
           onClick={onOrderClick}
           className="group inline-flex items-center gap-4 bg-navy text-white pl-6 pr-2.5 py-2.5 rounded-full shadow-lg hover:bg-navy-light transition-all duration-200 transform hover:-translate-y-0.5"
         >
-          <span className="font-medium text-sm">Buy Now</span>
+          <span className="font-poppins text-sm">Buy Now</span>
           <span className="w-8 h-8 rounded-full bg-coffee  flex items-center justify-center text-white transition-transform duration-200 group-hover:translate-x-0.5">
             <ChevronRight className="w-4 h-4 stroke-[2.5]" />
           </span>

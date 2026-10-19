@@ -6,13 +6,10 @@ interface MenuHeaderProps {
 export default function MenuHeader({ searchQuery, onResetSearch }: MenuHeaderProps) {
   return (
     <div className="text-center max-w-2xl mx-auto mb-10">
-      <span className="text-xs font-semibold uppercase tracking-widest text-coffee">
-        Curated Offerings
-      </span>
       <h2 className="font-adventor font-bold text-3xl sm:text-4xl text-stone-900 tracking-tight mt-2">
         Explore Aura&apos;s Curated Menu
       </h2>
-      <p className="text-silver text-sm mt-3">
+      <p className="font-poppins text-silver text-sm mt-3">
         Checkout our coffee
       </p>
 

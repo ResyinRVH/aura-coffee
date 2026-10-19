@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="scroll-mt-24 relative w-full overflow-hidden bg-[#f6eee3] py-8 lg:py-16"
+      className="scroll-mt-24 relative w-full overflow-hidden bg-silver-100 py-8 lg:py-16"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
         <HeroContent onOrderClick={handleScrollToMenu} />

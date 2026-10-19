@@ -39,7 +39,7 @@ export default function MenuSection() {
   };
 
   return (
-    <section id="menu" className="scroll-mt-24 w-full bg-[#f6eee3] py-20">
+    <section id="menu" className="scroll-mt-24 w-full bg-silver-100 py-20">
       <div className="max-w-7xl mx-auto px-6">
         <MenuHeader
           searchQuery={searchQuery}
@@ -54,7 +54,7 @@ export default function MenuSection() {
         {filteredItems.length === 0 ? (
           <MenuEmptyState onReset={handleResetAll} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredItems.map((item: MenuItem) => (
               <MenuItemCard
                 key={item.id}

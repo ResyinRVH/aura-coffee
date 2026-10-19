@@ -3,12 +3,9 @@ import { MapPin, Phone, Clock, ArrowUpRight } from 'lucide-react';
 
 export default function FindUs() {
     return (
-        <section id="location" className="w-full bg-[#f6eee3] py-20 border-t border-stone-200/50">
+        <section id="location" className="w-full bg-silver-100 py-20 border-t border-stone-200/50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center max-w-xl mx-auto mb-14">
-                    <span className="text-xs font-semibold uppercase tracking-widest text-coffee">
-                        Visit Our Studio
-                    </span>
                     <h2 className="font-adventor font-bold text-3xl sm:text-4xl text-stone-900 tracking-tight mt-2">
                         Discover Our Warm Sanctuary
                     </h2>

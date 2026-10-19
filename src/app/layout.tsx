@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono} from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const poppins = localFont({
+  src: [
+    {
+      path: "./fonts/poppins.regular.ttf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,9 +66,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${texGyreAdventor.variable} scroll-smooth h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${texGyreAdventor.variable} ${poppins.variable} scroll-smooth h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f6eee3] text-silver">
+      <body className="min-h-full flex flex-col bg-silver-100 text-silver">
         {children}
       </body>
     </html>

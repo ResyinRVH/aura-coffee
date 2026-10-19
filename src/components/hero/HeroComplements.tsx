@@ -45,7 +45,7 @@ export default function HeroComplements() {
             <h2 className="font-adventor font-bold text-sm sm:text-base text-silver leading-tight">
               {item.title}
             </h2>
-            <p className="font-adventor font-regular text-xs text-silver leading-normal mt-0.5">
+            <p className="font-poppins font-regular text-xs text-silver leading-normal mt-0.5">
               {item.desc}
             </p>
           </div>

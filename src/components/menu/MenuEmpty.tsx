@@ -17,7 +17,7 @@ export default function MenuEmptyState({ onReset }: MenuEmptyStateProps) {
       <button
         type="button"
         onClick={onReset}
-        className="mt-4 text-xs font-semibold text-[#f67b52] hover:underline"
+        className="mt-4 text-xs font-semibold text-coffee hover:underline"
       >
         View All Offerings
       </button>

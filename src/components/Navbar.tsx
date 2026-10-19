@@ -48,7 +48,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-[#f6eee3]/70 backdrop-blur-md border-b border-stone-200/50 text-stone-900 transition-all duration-200">
+        <header className="sticky top-0 z-50 w-full bg-silver-100/70 backdrop-blur-md border-b border-stone-200/50 text-stone-900 transition-all duration-200">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
                 <Link
                     href="/"
